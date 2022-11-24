@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<!--<![endif]-->
+<!-- Begin Head -->
+
+<head>
+    <title>添加图书</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="MobileOptimized" content="320">
+    <!--Start Style -->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/fonts.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/icofont.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/style.css}">
+    <link rel="stylesheet" id="theme-change" type="text/css" href="">
+</head>
+
+<body>
+<div class="loader">
+    <div class="spinner">
+        <img th:src="@{/static/picture/loader.gif}" alt="">
+    </div>
+</div>
+<!-- Main Body -->
+<div class="page-wrapper">
+    <!--Header Start-->
+    <div th:replace="template.html::title"></div>
+    <!--Sidebar Start-->
+    <div th:replace="template.html::sidebar"></div>
+    <!-- Container Start -->
+    <div class="page-wrapper">
+        <div class="main-content">
+            <!-- Page Title Start -->
+            <div class="row">
+                <div class="colxl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-title-wrapper">
+                        <div class="page-title-box ad-title-box-use">
+                            <h4 class="page-title">录入书籍信息</h4>
+                        </div>
+                        <div class="breadcrumb-list">
+                            <ul>
+                                <li class="breadcrumb-link">
+                                    <a href="javascript:void(0);"><i class="fas fa-home mr-2"></i>图书管理系统</a>
+                                </li>
+                                <li class="breadcrumb-link active">录入书籍信息</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- From Start -->
+            <div class="from-wrapper">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>添加借阅</h4>
+                                <p class="card-desc">请在下方选择所借阅的 <code>书籍</code> 以及对应的 <code>借阅人</code></p>
+                            </div>
+                            <div class="card-body">
+                                <form class="separate-form" method="post" th:action="@{/api/admin/add-book}">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="member-name" class="col-form-label">书籍标题</label>
+                                                    <input class="form-control" type="text" placeholder="伞兵一号的故事" id="member-name" name="title">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="member-email" class="col-form-label">书籍简介</label>
+                                                    <input class="form-control" type="text" placeholder="讲述了一个伞兵带着所有人吃鸡的故事" id="member-email" name="desc">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                <div class="form-group">
+                                                    <label for="company-name" class="col-form-label">价格</label>
+                                                    <input class="form-control" type="text" placeholder="100.50" id="company-name" name="price">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                            <button class="btn btn-primary" type="submit">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-footer-btm">
+                <p>Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Slide Setting Box -->
+<div class="slide-setting-box">
+    <div class="slide-setting-holder">
+        <div class="setting-box-head">
+            <h4>General Settings</h4>
+            <a href="javascript:void(0);" class="close-btn">Close</a>
+        </div>
+        <div class="setting-box-body">
+            <div class="p-4">
+                <div class="switch-settings">
+                    <div class="d-flex mb-3">
+                        <span class="mr-auto fs-15">Notifications</span>
+                        <div class="checkbox checkbox-toggle">
+                            <input id="checkbox55" type="checkbox">
+                            <label for="checkbox55"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <span class="mr-auto fs-15">Show your emails</span>
+                        <div class="checkbox checkbox-toggle">
+                            <input id="checkbox56" type="checkbox">
+                            <label for="checkbox56"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <span class="mr-auto fs-15">Show Task statistics</span>
+                        <div class="checkbox checkbox-toggle">
+                            <input id="checkbox57" type="checkbox">
+                            <label for="checkbox57"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <span class="mr-auto fs-15">Show recent activity</span>
+                        <div class="checkbox checkbox-toggle">
+                            <input id="checkbox58" type="checkbox">
+                            <label for="checkbox58"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <span class="mr-auto fs-15">System Logs</span>
+                        <div class="checkbox checkbox-toggle">
+                            <input id="checkbox59" type="checkbox">
+                            <label for="checkbox59"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <span class="mr-auto fs-15">Error Reporting</span>
+                        <div class="checkbox checkbox-toggle">
+                            <input id="checkbox60" type="checkbox">
+                            <label for="checkbox60"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <span class="mr-auto fs-15">Show your status to all</span>
+                        <div class="checkbox checkbox-toggle">
+                            <input id="checkbox61" type="checkbox">
+                            <label for="checkbox61"></label>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <span class="mr-auto fs-15">Keep up to date</span>
+                        <div class="checkbox checkbox-toggle">
+                            <input id="checkbox62" type="checkbox">
+                            <label for="checkbox62"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-3 border-top border-bottom">
+            <h5 class="border-bottom-0 mb-0">Overview</h5>
+        </div>
+        <div class="p-4">
+            <div class="progress-wrapper">
+                <div class="mb-3">
+                    <p class="mb-2">Achieves<span class="float-right text-muted font-weight-normal">95%</span></p>
+                    <div class="progress h-1">
+                        <div class="progress-bar bg-primary col-3" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-wrapper pt-2">
+                <div class="mb-3">
+                    <p class="mb-2">Projects<span class="float-right text-muted font-weight-normal">65%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar bg-secondary col-3" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-wrapper pt-2">
+                <div class="mb-3">
+                    <p class="mb-2">Earnings<span class="float-right text-muted font-weight-normal">55%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar bg-success col-8" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-wrapper pt-2">
+                <div class="mb-3">
+                    <p class="mb-2">Balance<span class="float-right text-muted font-weight-normal">50%</span></p>
+                    <div class="progress h-1">
+                        <div class="progress-bar bg-warning w-50 " role="progressbar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-wrapper pt-2">
+                <div class="mb-3">
+                    <p class="mb-2">Total Profits<span class="float-right text-muted font-weight-normal">80%</span></p>
+                    <div class="progress">
+                        <div class="progress-bar bg-info col-6" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-wrapper pt-2">
+                <div class="mb-3">
+                    <p class="mb-2">Total Likes<span class="float-right text-muted font-weight-normal">75%</span></p>
+                    <div class="progress h-1">
+                        <div class="progress-bar bg-teal w-75" role="progressbar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Color Setting -->
+<div id="style-switcher">
+    <div>
+        <ul class="colors">
+            <li>
+                <p class='colorchange' id='color'>
+                </p>
+            </li>
+            <li>
+                <p class='colorchange' id='color2'>
+                </p>
+            </li>
+            <li>
+                <p class='colorchange' id='color3'>
+                </p>
+            </li>
+            <li>
+                <p class='colorchange' id='color4'>
+                </p>
+            </li>
+            <li>
+                <p class='colorchange' id='color5'>
+                </p>
+            </li>
+            <li>
+                <p class='colorchange' id='style'>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom">
+        <a href="" class="settings">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+<!-- Color Setting -->
+
+<!-- Script Start -->
+<script th:src="@{/static/js/jquery.min.js}"></script>
+<script th:src="@{/static/js/popper.min.js}"></script>
+<script th:src="@{/static/js/bootstrap.min.js}"></script>
+<script th:src="@{/static/js/swiper.min.js}"></script>
+<script th:src="@{/static/js/apexcharts.min.js}"></script>
+<script th:src="@{/static/js/control-chart-apexcharts.js}"></script>
+<!-- Page Specific -->
+<script th:src="@{/static/js/nice-select.min.js}"></script>
+<!-- Custom Script -->
+<script th:src="@{/static/js/custom.js}"></script>
+</body>
+
+</html>
