@@ -46,4 +46,6 @@ public interface BookMapper {
 
     @Select("select count(*) from borrow")
     int getBorrowCount();
+    @Delete("delete from borrow where bid=#{bid}")
+    void bookReturn(int bid);
 }

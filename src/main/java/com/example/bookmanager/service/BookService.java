@@ -18,4 +18,5 @@ public interface BookService {
     PageInfo<Book> getBorrowedBookListById(int pageNum,int id);
     PageInfo<Book> getAllBookWithoutBorrow(int PageNum);
     PageInfo<BorrowDetail> getBorrowDetailList(int pageNum);
+    void bookReturn(int bid);
 }

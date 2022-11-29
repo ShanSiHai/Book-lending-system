@@ -90,4 +90,9 @@ public class BookServiceImpl implements BookService {
         PageInfo<BorrowDetail> page=new PageInfo<>(mapper.getBorrowDetailList());
         return page;
     }
+
+    @Override
+    public void bookReturn(int bid) {
+        mapper.bookReturn(bid);
+    }
 }

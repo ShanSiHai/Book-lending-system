@@ -93,10 +93,7 @@
                                                 <div class="action-option ">
                                                     <ul>
                                                         <li>
-                                                            <a href="javascript:void(0); "><i class="far fa-edit mr-2 "></i>编辑</a>
-                                                        </li>
-                                                        <li>
-                                                            <a th:href="@{'/api/user/borrow-book?bid='+${book.getBid()}}"><i class="far fa-trash-alt mr-2 "></i>借阅</a>
+                                                            <a th:href="@{'/api/user/book-return?bid='+${book.getBid()}}"><i class="far fa-trash-alt mr-2 "></i>还书</a>
                                                         </li>
                                                     </ul>
                                                 </div>

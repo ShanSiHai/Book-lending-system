@@ -21,4 +21,10 @@ public class UserApiController {
         bookService.borrowBook(bid, user.getId());
         return "redirect:/page/user/book";
     }
+
+    @RequestMapping("/book-return")
+    public String bookReturn(@RequestParam("bid") int bid){
+        bookService.bookReturn(bid);
+        return "redirect:/page/user/book";
+    }
 }
